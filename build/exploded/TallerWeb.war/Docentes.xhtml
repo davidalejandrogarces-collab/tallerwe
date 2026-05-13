@@ -1,4 +1,4 @@
-¿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="es"
       xmlns="http://www.w3.org/1999/xhtml"
@@ -11,28 +11,29 @@
     </h:head>
     <h:body>
         <p:card>
-            <f:facet name="title">Gestionar Asinagturas</f:facet>
+            <f:facet name="title">Gestionar Docentes</f:facet>
             <p:card style="width: 35rem; margin-bottom: 2em">
-                <f:facet name="title">Gestionar Asignaturas</f:facet>
+                <f:facet name="title">Gestionar Docentes</f:facet>
 
                 <h:panelGrid columns="3">
 
-                    <p:outputLabel for="txfCodigo" value="Nombre : " />
-                    <p:inputText id="txfCodigo" value="#{controlDoc.docente.nombres}"></p:inputText>
-                    <p:message for="txfCodigo"></p:message>
-
-                    <p:outputLabel for="txfNombre" value="Apellido : " />
-                    <p:inputText id="txfNombre" value="#{controlDoc.docente.apellidos}"></p:inputText>
+                    <p:outputLabel for="txfNombre" value="Nombre : " />
+                    <p:inputText id="txfNombre" value="#{controlDoc.docente.nombres}" />
                     <p:message for="txfNombre"></p:message>
 
-                    <p:outputLabel for="txfCreditos" value="NUIP : " />
-                    <p:inputNumber id="txfCreditos" value="#{controlDoc.docente.nuip}" ></p:inputNumber>
-                    <p:message for="txfCreditos"></p:message>
+                    <p:outputLabel for="txfApellido" value="Apellido : " />
+                    <p:inputText id="txfApellido" value="#{controlDoc.docente.apellidos}" />
+                    <p:message for="txfApellido"></p:message>
 
-                    <p:outputLabel for="txfIntensidad" value="Profesión : " />
-                    <p:inputNumber id="txfIntensidad"
-                                   value="#{controlDoc.docente.profesion}"></p:inputNumber>
-                    <p:message for="txfIntensidad"></p:message>
+                    <p:outputLabel for="txfNUIP" value="NUIP : " />
+                    <p:inputNumber id="txfNUIP" value="#{controlDoc.docente.nuip}"
+                                   decimalPlaces="0"/>
+                    <p:message for="txfNUIP"></p:message>
+
+                    <p:outputLabel for="txfProfesion" value="Profesion : " />
+                    <p:inputText id="txfProfesion"
+                                   value="#{controlDoc.docente.profesion}" />
+                    <p:message for="txfProfesion"></p:message>
 
                 </h:panelGrid>
 
@@ -41,7 +42,7 @@
             <f:facet name="footer">
                 <p:commandButton icon="pi pi-check" value ="guardar"/>
                 <p:commandButton icon="pi pi-times" value ="cancelar"
-                                 styleClass ="ui-buttun-secondary"
+                                 styleClass ="ui-button-secondary"
                                  style ="margin-left: .5em"/>
             </f:facet>
         </p:card>

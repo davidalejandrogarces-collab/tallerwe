@@ -18,10 +18,10 @@ import univalle.edu.co.fpoe.modelo.Docente;
 @SessionScoped
 public class ControladorDocentes implements Serializable{
     
-    private Docente docente;
+    private Docente docente= new Docente("fisico",(double)123413,"Juan","Perez");
 
-    public ControladorDocentes(Docente docente) {
-        this.docente = docente;
+    public ControladorDocentes() {
+        
     }
 
     public Docente getDocente() {
