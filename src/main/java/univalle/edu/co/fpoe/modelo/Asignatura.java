@@ -4,19 +4,35 @@
  */
 package univalle.edu.co.fpoe.modelo;
 
+import co.edu.uvpalmira.fpoe.jpalib.AbstractEntity;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.NamedQueries;
+import jakarta.persistence.NamedQuery;
+
 /**
  *
- * @author Sala Sistemas
- * aqui van las entidades, dentro de este paquete
+ * @author Sala Sistemas aqui van las entidades, dentro de este paquete
  */
-public class Asignatura {
+@Entity
+@NamedQueries({
+    @NamedQuery(name = "Asignatura.Buscarporcodigo", query = "SELECT a FROM Asignatura a  WHERE a.codigo = :codigo "),
+    @NamedQuery(name = "Asignatura.BuscarPorEscula", query = "SELECT a FROM Asignatura a  WHERE a.codigo LIKE :prefijo ORDER BY a.codigo ASC ")
+})
+public class Asignatura extends AbstractEntity {
+
+    @Column(nullable = false, length = 7, unique = true)
     private String codigo;
+    @Column(nullable = false, length = 150, unique = false)
     private String nombre;
+    @Column(nullable = false)
     private byte creditos;
+    @Column(nullable = false)
     private byte intensidad;
-    
-    public Asignatura(){
-        
+
+    public Asignatura() {
+
     }
 
     public Asignatura(String codigo, String nombre, byte creditos, byte intensidad) {
@@ -41,7 +57,21 @@ public class Asignatura {
     public byte getIntensidad() {
         return intensidad;
     }
-    
-    
-    
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setCreditos(byte creditos) {
+        this.creditos = creditos;
+    }
+
+    public void setIntensidad(byte intensidad) {
+        this.intensidad = intensidad;
+    }
+
 }
